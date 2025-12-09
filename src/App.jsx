@@ -11,12 +11,15 @@ function App() {
   const [mapLoaded, setMapLoaded] = useState(false);
 
   const layers = [
-    { id: '2025', url: 'mapbox://joyzhou.ao85t547', sourceLayer: '2022-9hxm8b', color: 'rgb(230, 97, 80)' },
-    { id: '2024', url: 'mapbox://joyzhou.0ql7ia6g', sourceLayer: '2024-2toy6l', color: 'rgb(70, 180, 120)' },
-    { id: '2023', url: 'mapbox://joyzhou.ao85t547', sourceLayer: '2023-4518gh', color: 'rgb(220, 150, 200)' },
+    { id: '2025', url: 'mapbox://joyzhou.1gdeht5m', sourceLayer: '2025-argrz3', color: 'rgb(230, 97, 80)' },
+    { id: '2024', url: 'mapbox://joyzhou.1k9lpdpr', sourceLayer: '2024-2toy6l', color: 'rgb(70, 180, 120)' },
+    { id: '2023', url: 'mapbox://joyzhou.9s9fgc8v', sourceLayer: '2023-4518gh', color: 'rgb(220, 150, 200)' },
     { id: '2022', url: 'mapbox://joyzhou.ao85t547', sourceLayer: '2022-9hxm8b', color: 'rgb(179, 115, 55)' },
     { id: '2021', url: 'mapbox://joyzhou.0ql7ia6g', sourceLayer: '2021-2lhdsi', color: 'rgba(55,148,179,1)' },
   ];
+
+  const activeIndex = layers.findIndex(layer => layer.id === activeLayer);
+  const layerToggleWidth = 60; // Fixed width for each toggle in pixels
 
   useEffect(() => {
     if (mapRef.current) return;
@@ -82,7 +85,6 @@ function App() {
       if (!features.length) return;
 
       const feature = features[0];
-      console.log(feature.properties);
 
       const popup = new mapboxgl.Popup({ offset: 25, className: 'station-popup' })
         .setLngLat(feature.geometry.coordinates)
@@ -132,6 +134,7 @@ function App() {
             <label htmlFor={layer.id}>{layer.id}</label>
           </div>
         ))}
+        <div className="glider" style={{ transform: `translateX(${activeIndex * layerToggleWidth}px)` }}></div>
       </div>
       <div id="map" ref={mapContainerRef} className="map-container" />
     </div>

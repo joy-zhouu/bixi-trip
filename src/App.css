@@ -25,43 +25,56 @@ body {
   margin-bottom: 20px;
 }
 
-/* Horizontal menu layout */
+/* New menu styles for segmented control */
 .menu {
+  position: relative;
   display: flex;
   justify-content: center;
+  background-color: #e9ecef;
+  border-radius: 99px;
+  padding: 4px;
   margin-bottom: 30px;
-  background: #fff;
-  padding: 5px; /* Reduced padding */
-  border-radius: 50px; /* Pill shape */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* More subtle shadow */
-  border: 1px solid #e9ecef; /* Added border for definition */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) inset;
 }
 
 .layer-toggle {
-  margin: 0 2px; /* Tighter margin */
+  width: 60px; /* Fixed width for each segment */
 }
 
-/* Custom radio button style */
 .layer-toggle input[type="radio"] {
   display: none; /* Hide the default radio button */
 }
 
 .layer-toggle label {
-  cursor: pointer;
-  padding: 6px 14px; /* Reduced padding */
-  border-radius: 30px;
-  background-color: transparent; /* Transparent background by default */
-  color: #495057;
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+  text-align: center;
+  font-size: 14px;
   font-weight: 500;
-  font-size: 14px; /* Smaller font */
-  transition: all 0.3s ease;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-/* Style for the selected (checked) radio button label */
+/* Active label color */
 .layer-toggle input[type="radio"]:checked + label {
-  background-color: #007bff;
-  color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+  color: #000;
+}
+
+.glider {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: calc(100% - 8px);
+  width: 60px; /* Match the width of .layer-toggle */
+  background-color: #ffffff;
+  border-radius: 99px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s cubic-bezier(0.45, 0, 0.2, 1);
+  z-index: 1;
 }
 
 /* Floating map container */
