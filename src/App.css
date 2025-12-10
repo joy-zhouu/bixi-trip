@@ -22,7 +22,16 @@ body {
   font-size: 2rem; /* Reduced font size */
   color: #333;
   font-weight: 600;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.map-description {
+  width: 80vw;
+  max-width: 900px;
+  text-align: center;
   margin-bottom: 20px;
+  color: #555;
 }
 
 /* New menu styles for segmented control */
@@ -32,13 +41,13 @@ body {
   justify-content: center;
   background-color: #e9ecef;
   border-radius: 99px;
-  padding: 4px;
-  margin-bottom: 30px;
+  padding: 3px;
+  margin-bottom: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) inset;
 }
 
 .layer-toggle {
-  width: 60px; /* Fixed width for each segment */
+  width: 50px; /* Fixed width for each segment */
 }
 
 .layer-toggle input[type="radio"] {
@@ -50,9 +59,9 @@ body {
   z-index: 2;
   display: block;
   width: 100%;
-  padding: 8px 0;
+  padding: 6px 0;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #555;
   cursor: pointer;
@@ -66,16 +75,26 @@ body {
 
 .glider {
   position: absolute;
-  top: 4px;
-  left: 4px;
-  height: calc(100% - 8px);
-  width: 60px; /* Match the width of .layer-toggle */
+  top: 3px;
+  left: 3px;
+  height: calc(100% - 6px);
+  width: 50px; /* Match the width of .layer-toggle */
   background-color: #ffffff;
   border-radius: 99px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s cubic-bezier(0.45, 0, 0.2, 1);
   z-index: 1;
 }
+
+.mode-toggle {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.mode-toggle label {
+  margin: 0 10px;
+}
+
 
 /* Floating map container */
 .map-container {
