@@ -1,20 +1,19 @@
 /* Set a background color and center the main container */
 body {
   background-color: #ffffff; /* White background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #555;
 }
 
 .app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 /* Smaller, centered title */
@@ -24,6 +23,7 @@ body {
   font-weight: 600;
   margin-bottom: 0px;
   text-align: center;
+  flex-shrink: 0;
 }
 
 .map-description {
@@ -31,7 +31,7 @@ body {
   max-width: 900px;
   text-align: center;
   margin-bottom: 20px;
-  color: #555;
+  flex-shrink: 0;
 }
 
 /* New menu styles for segmented control */
@@ -44,6 +44,7 @@ body {
   padding: 3px;
   margin-bottom: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) inset;
+  flex-shrink: 0;
 }
 
 .layer-toggle {
@@ -89,21 +90,25 @@ body {
 .mode-toggle {
   margin-bottom: 20px;
   font-size: 14px;
+  flex-shrink: 0;
 }
 
 .mode-toggle label {
   margin: 0 10px;
+  color: #555;
 }
 
 
 /* Floating map container */
 .map-container {
-  width: 80vw;
+  width: 100%;
   max-width: 900px;
-  height: 65vh;
-  border-radius: 15px; /* Rounded edges */
-  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15); /* Drop shadow to the bottom right */
-  border: 1px solid #ddd; /* Subtle border */
+  flex-grow: 1;
+  border-radius: 15px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  box-sizing: border-box;
 }
 
 /* Custom popup styling */

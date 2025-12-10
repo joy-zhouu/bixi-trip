@@ -17,7 +17,7 @@ function App() {
     { id: '2024', url: 'mapbox://joyzhou.1k9lpdpr', sourceLayer: '2024-2toy6l'},
     { id: '2023', url: 'mapbox://joyzhou.9s9fgc8v', sourceLayer: '2023-4518gh'},
     { id: '2022', url: 'mapbox://joyzhou.ao85t547', sourceLayer: '2022-9hxm8b'},
-    { id: '2021', url: 'mapbox://joyzhou.0ql7ia6g', sourceLayer: '2021-2lhdsi'},
+    { id: '2021', url: 'mapbox://joyzhou.9r3lscsn', sourceLayer: '2021-ara0bn'},
   ];
 
   const activeIndex = layers.findIndex(layer => layer.id === activeLayer);
@@ -150,7 +150,7 @@ function App() {
 
       new mapboxgl.Popup({ offset: 25, className: 'station-popup' })
         .setLngLat(feature.geometry.coordinates)
-        .setHTML(`<h3>${feature.properties.Station}</h3><p>Trips Started: ${feature.properties['Trips Started']}</p>
+        .setHTML(`<h3>${feature.properties['Station']}</h3><p>Trips Started: ${feature.properties['Trips Started']}</p>
           <p>Trips Ended: ${feature.properties['Trips Ended']}</p>
           <p>Total Trips: ${feature.properties['Total Trips']}</p>`)
         .addTo(map);
