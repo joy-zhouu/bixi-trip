@@ -4,6 +4,7 @@ import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './App.css';
 import markerUrl from './assets/marker.svg?url';
+require('dotenv').config();
 
 function App() {
   const mapContainerRef = useRef(null);
@@ -27,7 +28,7 @@ function App() {
     if (mapRef.current) return;
     if (!mapContainerRef.current) return;
 
-    mapboxgl.accessToken = 'pk.eyJ1Ijoiam95emhvdSIsImEiOiJja3k0cjBmbDQwOXpsMm9vYWxiZzU3bnRpIn0.UgZTLd8-0YEpX0Fnq28rMA';
+    mapboxgl.accessToken = process.env.API_KEY;
 
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
